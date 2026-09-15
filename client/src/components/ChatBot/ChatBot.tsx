@@ -9,14 +9,14 @@ type Message = {
   text: string;
 };
 
-const STORAGE_KEY = "trust-dent-chat";
+const STORAGE_KEY = "embedly";
 const MAX_STORED_MESSAGES = 50;
 const MAX_HISTORY_MESSAGES = 6;
 
 const initialMessage: Message = {
   id: 1,
   role: "assistant",
-  text: "Hi! I'm the Trust Dent AI assistant. How can I help you today?",
+  text: "Hi! I'm the Embedly AI assistant. How can I help you today?",
 };
 
 export default function AIChatbot() {
