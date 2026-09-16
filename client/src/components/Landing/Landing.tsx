@@ -4,10 +4,11 @@ import Hero from './Hero';
 import Logos from './Logos';
 import Features from './Features';
 import Stats from './Stats';
+import Footer from './Footer';
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-[#77D4B6] selection:text-[#45312C]">
+    <div className="min-h-screen bg-[#EBEBEB] font-sans text-black selection:bg-[#37C6E5] selection:text-black">
       <Nav />
       <main>
         <Hero />
@@ -15,6 +16,7 @@ const Landing = () => {
         <Features />
         <Stats />
       </main>
+      <Footer />
     </div>
   );
 };
