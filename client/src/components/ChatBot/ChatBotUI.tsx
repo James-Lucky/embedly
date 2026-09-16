@@ -1,5 +1,4 @@
 import React from "react";
-import { ChatMessage } from "./ChatMessage";
 import { Message } from "./types";
 
 interface ChatBotUIProps {
@@ -62,7 +61,22 @@ export const ChatBotUI: React.FC<ChatBotUIProps> = ({
           {/* Messages List */}
           <div className="flex-1 space-y-4 overflow-y-auto bg-[#F9F9F9] p-5">
             {messages.map((message) => (
-              <ChatMessage key={message.id} message={message} />
+              <div
+                key={message.id}
+                className={`flex ${
+                  message.role === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className={`rounded-sm px-4 py-3 max-w-[85%] text-sm ${
+                    message.role === "user"
+                      ? "bg-black text-white"
+                      : "bg-white text-black border border-gray-300"
+                  }`}
+                >
+                  {message.text}
+                </div>
+              </div>
             ))}
 
             {/* Loading Indicator */}
