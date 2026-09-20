@@ -2,7 +2,7 @@ import React from "react";
 
 const Logos = () => {
   return (
-    <section className="bg-[#EBEBEB] border-b border-gray-300">
+    <section className="bg-white border-b border-gray-300">
       <div className="max-w-7xl mx-auto py-12 px-4 md:px-8 border-x border-gray-300">
         <p className="text-center text-[11px] md:text-xs font-semibold text-gray-500 mb-10">
           Trusted by leading healthcare providers

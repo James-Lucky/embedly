@@ -1,23 +1,27 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { ChatBotUI } from "./ChatBotUI";
-import { Message } from "./types";
+import ChatBotUI from "./ChatBotUI";
+import { Message } from "../../../types/types";
 
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, role: "assistant", text: "Hello! How can I help you today?" }
+    { id: 1, role: "assistant", text: "Hello! How can I help you today?" },
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const handleSend = () => {
     if (!input.trim()) return;
-    
+
     // Add user message
-    const newUserMessage: Message = { id: Date.now(), role: "user", text: input };
+    const newUserMessage: Message = {
+      id: Date.now(),
+      role: "user",
+      text: input,
+    };
     setMessages((prev) => [...prev, newUserMessage]);
     setInput("");
     setIsLoading(true);
@@ -26,7 +30,11 @@ export default function AIChatbot() {
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { id: Date.now(), role: "assistant", text: "This is a dummy response. The logic has been removed as requested." }
+        {
+          id: Date.now(),
+          role: "assistant",
+          text: "This is a dummy response. The logic has been removed as requested.",
+        },
       ]);
       setIsLoading(false);
     }, 1000);

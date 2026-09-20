@@ -1,19 +1,18 @@
 "use client";
-
 import React, { useState } from "react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <nav className="flex items-center justify-between px-4 md:px-8 py-5 bg-[#EBEBEB] border-b border-gray-300 relative z-50">
+    <header className="fixed top-0 left-0 right-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-300">
+      <nav className="flex items-center justify-between px-4 md:px-8 py-4 md:py-5 relative">
         <div className="flex items-center gap-2 text-black cursor-pointer">
           <img src="/logo.png" alt="logo" className="w-8 h-8" />
           <h1 className="text-xl font-bold tracking-tight">Embedly</h1>
         </div>
 
-        <div className="hidden lg:flex items-center gap-8 text-sm font-semibold text-gray-700">
+        <div className="hidden xl:flex items-center gap-8 text-sm font-semibold text-gray-700">
           <a href="#" className="hover:text-black transition-colors">
             Platform
           </a>
@@ -27,20 +26,20 @@ const Nav = () => {
             Docs
           </a>
           <div className="flex items-center gap-4 ml-4 border-l border-gray-300 pl-8">
-            <a href="#" className="hover:text-black transition-colors">
+            <a href="/auth/login" className="bg-white text-black border border-gray-300 hover:border-black px-5 py-2.5 rounded-sm transition-colors shadow-sm font-semibold flex items-center justify-center">
               Log in
             </a>
-            <button className="bg-black text-white px-5 py-2.5 rounded-sm hover:bg-gray-800 transition-colors shadow-sm">
+            <a href="/auth/signUp" className="bg-black text-white px-5 py-2.5 rounded-sm hover:bg-gray-800 transition-colors shadow-sm font-semibold flex items-center justify-center">
               Start Building
-            </button>
+            </a>
           </div>
         </div>
 
         {/* Hamburger Icon */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-black p-2 focus:outline-none hover:bg-gray-200 rounded-sm transition-colors"
+            className="text-black p-2 focus:outline-none hover:bg-gray-100 rounded-sm transition-colors"
           >
             {isOpen ? (
               <svg
@@ -77,35 +76,56 @@ const Nav = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-[73px] left-0 right-0 bg-[#EBEBEB] border-b border-gray-300 z-40 px-6 py-6 shadow-xl flex flex-col gap-6">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-300 px-6 py-6 shadow-xl flex flex-col gap-6 max-h-[calc(100vh-70px)] overflow-y-auto">
           <div className="flex flex-col gap-4 text-sm font-semibold text-gray-700">
-            <a href="#" className="hover:text-black transition-colors">
+            <a
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-black transition-colors"
+            >
               Platform
             </a>
-            <a href="#" className="hover:text-black transition-colors">
+            <a
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-black transition-colors"
+            >
               Solutions
             </a>
-            <a href="#" className="hover:text-black transition-colors">
+            <a
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-black transition-colors"
+            >
               Pricing
             </a>
-            <a href="#" className="hover:text-black transition-colors">
+            <a
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-black transition-colors"
+            >
               Docs
             </a>
           </div>
-          <div className="flex flex-col gap-4 pt-6 border-t border-gray-300">
+          <div className="flex flex-col gap-3 pt-6 border-t border-gray-300">
             <a
-              href="#"
-              className="hover:text-black font-semibold text-sm transition-colors text-center"
+              href="/auth/login"
+              onClick={() => setIsOpen(false)}
+              className="bg-white text-black border border-gray-300 hover:border-black px-5 py-3 rounded-sm transition-colors shadow-sm font-semibold text-sm text-center block w-full"
             >
               Log in
             </a>
-            <button className="bg-black text-white px-5 py-3 rounded-sm hover:bg-gray-800 transition-colors shadow-sm font-semibold w-full">
+            <a
+              href="/auth/signUp"
+              onClick={() => setIsOpen(false)}
+              className="bg-black text-white px-5 py-3 rounded-sm hover:bg-gray-800 transition-colors shadow-sm font-semibold text-sm w-full text-center block"
+            >
               Start Building
-            </button>
+            </a>
           </div>
         </div>
       )}
-    </>
+    </header>
   );
 };
 

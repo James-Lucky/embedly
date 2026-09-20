@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#EBEBEB] py-16 px-8 border-t border-gray-300 font-sans">
+    <footer className="bg-white py-16 px-8 border-t border-gray-300 font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
         
         {/* Brand */}

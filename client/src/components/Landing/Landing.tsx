@@ -8,9 +8,9 @@ import Footer from './Footer';
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-[#EBEBEB] font-sans text-black selection:bg-[#37C6E5] selection:text-black">
+    <div className="min-h-screen bg-white font-sans text-black selection:bg-[#37C6E5] selection:text-black">
       <Nav />
-      <main>
+      <main className="pt-[65px] md:pt-[73px]">
         <Hero />
         <Logos />
         <Features />

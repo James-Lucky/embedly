@@ -2,7 +2,7 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <section className="bg-[#EBEBEB] pt-24 pb-32 px-8 relative overflow-hidden">
+    <section className="bg-white pt-24 pb-32 px-8 relative overflow-hidden">
       {/* Background Bottom Gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-t from-[#37C6E5]/20 via-[#37C6E5]/5 to-transparent blur-3xl rounded-full pointer-events-none"></div>
 

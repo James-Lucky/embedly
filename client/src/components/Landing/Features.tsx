@@ -2,7 +2,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section className="bg-[#EBEBEB] py-24 px-8 border-b border-gray-300">
+    <section className="bg-white py-24 px-8 border-b border-gray-300">
       <div className="max-w-6xl mx-auto border border-gray-300 bg-transparent">
         <div className="text-center py-20 border-b border-gray-300">
           <h2 className="text-4xl md:text-5xl font-medium text-black mb-6 tracking-tight">
